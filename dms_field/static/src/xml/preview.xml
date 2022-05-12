@@ -42,50 +42,50 @@
                                     <t t-esc="dms_object.data.name" />
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Read:</td>
-                                <td>
-                                    <t t-if="dms_object.data.perm_read">
-                                        yes
-                                    </t>
-                                    <t t-else="">
-                                        no
-                                    </t>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Create:</td>
-                                <td>
-                                    <t t-if="dms_object.data.perm_create">
-                                        yes
-                                    </t>
-                                    <t t-else="">
-                                        no
-                                    </t>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Write:</td>
-                                <td>
-                                    <t t-if="dms_object.data.perm_write">
-                                        yes
-                                    </t>
-                                    <t t-else="">
-                                        no
-                                    </t>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Delete:</td>
-                                <td>
-                                    <t t-if="dms_object.data.perm_delete">
-                                        yes
-                                    </t>
-                                    <t t-else="">
-                                        no
-                                    </t>
-                                </td>
-                            </tr>
+<!--                            <tr>-->
+<!--                                <td>Read:</td>-->
+<!--                                <td>-->
+<!--                                    <t t-if="dms_object.data.perm_read">-->
+<!--                                        yes-->
+<!--                                    </t>-->
+<!--                                    <t t-else="">-->
+<!--                                        no-->
+<!--                                    </t>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td>Create:</td>-->
+<!--                                <td>-->
+<!--                                    <t t-if="dms_object.data.perm_create">-->
+<!--                                        yes-->
+<!--                                    </t>-->
+<!--                                    <t t-else="">-->
+<!--                                        no-->
+<!--                                    </t>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td>Write:</td>-->
+<!--                                <td>-->
+<!--                                    <t t-if="dms_object.data.perm_write">-->
+<!--                                        yes-->
+<!--                                    </t>-->
+<!--                                    <t t-else="">-->
+<!--                                        no-->
+<!--                                    </t>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td>Delete:</td>-->
+<!--                                <td>-->
+<!--                                    <t t-if="dms_object.data.perm_delete">-->
+<!--                                        yes-->
+<!--                                    </t>-->
+<!--                                    <t t-else="">-->
+<!--                                        no-->
+<!--                                    </t>-->
+<!--                                </td>-->
+<!--                            </tr>-->
                         </tbody>
                     </table>
                 </div>
