@@ -507,6 +507,29 @@ odoo.define("dms.DmsTreeController", function (require) {
                 title: _t("Open: ") + event.data.string,
             }).open();
         },
+        _onDMSOpenDirectoryFiles: function (event) {
+            event.stopPropagation();
+            var record = this.model.get(event.data.id, {raw: true});
+            if (record.model === "dms.directory") {
+                this.do_action({
+                    type: "ir.actions.act_window",
+                    name: "Files",
+                    res_model: "dms.file",
+                    views: [
+                        [false, "kanban"],
+                        [false, "list"],
+                        [false, "form"],
+                    ],
+                    view_mode: "kanban",
+                    target: "current",
+                    domain: [["directory_id", "=", record.res_id]],
+                    context: {
+                        default_directory_id: record.res_id,
+                        searchpanel_default_directory_id: record.res_id,
+                    },
+                });
+            }
+        },
         _onDMSEmptyStorages: function (event) {
             event.data.data.model = this.modelName;
             event.data.data.empty_storages = this.empty_storages;
@@ -553,6 +576,7 @@ odoo.define("dms.DmsTreeController", function (require) {
         dms_preview_file: "_onDMSPreviewFile",
         dms_load: "_onDMSLoad",
         dms_open_record: "_onDMSOpenRecord",
+        dms_open_directory_files: "_onDMSOpenDirectoryFiles",
         dms_empty_storages: "_onDMSEmptyStorages",
         dms_rename_node: "_onDMSRenameNode",
         dms_delete_node: "_onDMSDeleteNode",

@@ -31,6 +31,13 @@
                         >
                             Open
                         </button>
+                        <button
+                            class="btn btn-primary o_open_directory_files"
+                            t-if="dms_object.model === 'dms.directory'"
+                            t-att-data-id="dms_object.id"
+                        >
+                            Open Directory Files
+                        </button>
                     </div>
                 </div>
                 <div class="o_preview_directory_table_body">
