@@ -22,6 +22,7 @@ odoo.define("dms.DmsTreeRenderer", function (require) {
         events: _.extend({}, BasicRenderer.prototype.events || {}, {
             "click .o_preview_file": "_onRecordPreview",
             "click .o_open_file": "_onOpenRecord",
+            "click .o_open_directory_files": "_onOpenDirectoryFiles",
             "click .o_dms_add_directory": "_onDMSAddDirectoryRecord",
         }),
         template: "dms.DocumentTree",
@@ -395,6 +396,17 @@ odoo.define("dms.DmsTreeRenderer", function (require) {
                 });
             }
         },
+        _onOpenDirectoryFiles: function (ev) {
+            ev.stopPropagation();
+            var id = $(ev.currentTarget).data("id");
+            if (id) {
+                this.trigger_up("dms_open_directory_files", {
+                    id: id,
+                    target: ev.target,
+                });
+            }
+        },
+
         _onDMSAddDirectory: function (node) {
             var self = this;
             var context = {
